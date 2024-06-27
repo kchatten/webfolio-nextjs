@@ -1,0 +1,39 @@
+.header{
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+
+    place-content: center;
+    justify-content: space-between;
+
+    height: 10dvh;
+    width: 100%;
+
+    background-color: black;
+    border-bottom: 2px solid green;
+}
+
+.header span{
+    padding-left: 0.5rem;
+    position: relative;
+    color: lime;
+
+    align-self: center;
+}
+
+.buttonContainer{
+    display: inherit;
+    flex-direction: row;
+    place-items: center;
+}
+
+@media screen and (orientation: portrait) {
+    .header {
+        justify-content: center;
+    }
+
+    .header span{
+        display: none;
+    }
+}

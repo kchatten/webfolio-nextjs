@@ -13,24 +13,31 @@ interface OffsiteButtonProps extends ButtonProps {
     href: string;
 }
 
-const OffsiteButton: React.FC<OffsiteButtonProps> = ({href, ...buttonProps}) => {
+const OffsiteButton: React.FC<OffsiteButtonProps> = ({ href, ...buttonProps }) => {
 
     const handleClick = (event: React.MouseEvent<HTMLButtonElement> | React.KeyboardEvent<HTMLButtonElement>) => {
 
-        const confirmed = window.confirm(`You are about to open a new window to:\n ${href}`);
+        event.preventDefault();
 
+        if (process.env.NODE_ENV === 'development') {
+            console.log(`You just clicked an Offsite button element! You probably shouldn't be seeing this.`)
+        }
+
+        const confirmed = window.confirm(`You are about to open a new window to:\n ${href}`);
+        
         if (confirmed) {
             window.open(href, '_blank');
         }
-        event.preventDefault();
-        console.log(`You just clicked an Offsite button element!`)
+
     }
 
-    return(
-        <Button 
-        {...buttonProps}
-        handleClick={handleClick}
+    return (
+
+        <Button
+            {...buttonProps}
+            handleClick={handleClick}
         />
+        
     )
 }
 

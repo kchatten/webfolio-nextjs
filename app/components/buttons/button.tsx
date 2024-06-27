@@ -17,17 +17,24 @@ export interface ButtonProps {
 const Button: React.FC<ButtonProps> = ({ className, textContent, handleClick }) => {
 
     function handleDefaultButtonBehaviour(event: React.MouseEvent<HTMLButtonElement> | React.KeyboardEvent<HTMLButtonElement>) {
+
         event.preventDefault();
-        console.log(`You just clicked a base button element! You probably shouldn't be seeing this.`)
+
+        if (process.env.NODE_ENV === 'development') {
+            console.log(`You just clicked a base button element! You probably shouldn't be seeing this.`)
+        }
+
     }
 
     return (
-        <button 
-        className={className ? className : `${styles.button}`}
-        onClick={handleClick? handleClick : handleDefaultButtonBehaviour}
+
+        <button
+            className={className ? className : `${styles.button}`}
+            onClick={handleClick ? handleClick : handleDefaultButtonBehaviour}
         >
             {textContent ? textContent : 'Click me!'}
         </button>
+        
     )
 }
 

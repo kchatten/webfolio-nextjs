@@ -16,23 +16,31 @@ interface HeaderButtonProps extends ButtonProps {
     href: string;
 }
 
-const HeaderButton: React.FC<HeaderButtonProps> = ({href, ...buttonProps}) => {
+const HeaderButton: React.FC<HeaderButtonProps> = ({ href, ...buttonProps }) => {
 
     const router = useRouter();
     const pathname = usePathname();
 
     const handleClick = (event: React.MouseEvent<HTMLButtonElement> | React.KeyboardEvent<HTMLButtonElement>) => {
+
         event.preventDefault();
-        console.log(`You just clicked a Header button element!`)
+
+        if (process.env.NODE_ENV === 'development') {
+            console.log(`You just clicked a Header button element!  You probably shouldn't be seeing this.`)
+        }
+
         router.push(href);
+
     }
 
-    return(
-        <Button 
-        {...buttonProps}
-        className={href === pathname ? `${styles.headerbutton} ${styles.active}` : `${styles.headerbutton}` } 
-        handleClick={handleClick} 
+    return (
+
+        <Button
+            {...buttonProps}
+            className={href === pathname ? `${styles.headerbutton} ${styles.active}` : `${styles.headerbutton}`}
+            handleClick={handleClick}
         />
+
     )
 }
 

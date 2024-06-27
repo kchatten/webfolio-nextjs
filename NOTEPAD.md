@@ -1,0 +1,1 @@
+&apos; instead of apostrophes in raw text to avoid linting errors.

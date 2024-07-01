@@ -2,14 +2,13 @@
     display: flex;
     flex-direction: column;
     position: sticky;
-    top: 3.5rem;
+    top: 4rem;
 
-    height: 100dvh;
+    height: 75%;
     width: 20dvw;
 
     color: lime;
     background-color: black;
-    border-right: 2px solid green;
 }
 
 .toggler{

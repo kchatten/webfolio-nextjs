@@ -28,7 +28,6 @@
 
 .accordion .header.active:hover{
     color: black;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 1);
     background: linear-gradient(0deg, lawngreen 20%, green 100%);
 }
 

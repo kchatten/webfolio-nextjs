@@ -18,9 +18,10 @@ describe("Testing RootLayout component", () => {
 
     it('can be rendered in a default state', () => {
 
-        const reactNode = <p>child</p>;
-
-        render(<RootLayout children={reactNode}/>);
+        render(
+            <RootLayout>
+                <p>child</p>
+            </RootLayout>);
         const header = screen.getByRole('banner');
         const childElement = screen.getByText('child');
 

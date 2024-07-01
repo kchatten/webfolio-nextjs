@@ -12,8 +12,9 @@ const server = express(); // Creates an instance of an Express.js server
 app.prepare() // A Serverside method that ensures dependencies are loaded before handling requests
 .then(() => { // After the dependencies are loaded, the application is ready to handle requests
 
-  // Serve static files from the 'public' directory
-  server.use(express.static(path.join(__dirname, 'public')));
+  // Serve static files from the appropriate 'static' directory
+  server.use('/_next/static', express.static(path.join(__dirname, 'app/.next/static')));
+  server.use('/static', express.static(path.join(__dirname, 'public')));
 
   // Configure CORS to allow requests from any origin
   server.use(cors({

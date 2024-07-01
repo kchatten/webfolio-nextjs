@@ -2,16 +2,18 @@
 
 import { useEffect, useRef } from 'react';
 
+
 import styles from './header.module.css';
 
 import HeaderButton from '../buttons/headerbutton';
 
+
 // #region HELPER FUNCTIONS RELATED TO BANNER TEXT 
-const generateRandomChar = (variants: Array<string>) => {
+export const generateRandomChar = (variants: Array<string>) => {
     return variants[Math.floor(Math.random() * variants.length)]; // Take in a variant array and return a random character from it.
 };
 
-const generateSiteName = () => {
+export const generateSiteName = () => {
     const k = ['K', 'k', '|<', '₭'];
     const c = ['C', 'c', '₾', '⊆'];
     const h = ['H', 'h', '#'];
@@ -36,6 +38,10 @@ const Header = () => {
         home: {
             textContent: 'Home',
             href: '/'
+        },
+        blog: {
+            textContent: 'Blog',
+            href: '/blog'
         },
         projects: {
             textContent: 'Projects',
@@ -84,10 +90,10 @@ const Header = () => {
     };
 
     return (
-        <header className={styles.header}>
-            <span ref={bannerTextRef} />
-            {renderHeaderButtons()}
-        </header>
+            <header className={styles.header}>
+                <span aria-label="kchat.dev" ref={bannerTextRef} />
+                {renderHeaderButtons()}
+            </header>
     )
 }
 

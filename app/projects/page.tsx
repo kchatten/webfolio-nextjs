@@ -13,8 +13,8 @@ export default function ProjectsPage() {
     </div>
 
   return (
-    <main>
-      <ContentBlock content={content} />
+    <main className="small">
+      <ContentBlock className={styles.contentBlock} content={content} />
     </main>
   );
 }

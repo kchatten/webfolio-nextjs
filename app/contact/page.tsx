@@ -26,8 +26,8 @@ export default function ContactPage() {
     </div>
 
   return (
-    <main>
-      <ContentBlock content={content} />
+    <main className="small">
+      <ContentBlock className={styles.lander} content={content} />
     </main>
   );
 }

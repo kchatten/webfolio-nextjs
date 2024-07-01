@@ -23,8 +23,8 @@ const OffsiteButton: React.FC<OffsiteButtonProps> = ({ href, ...buttonProps }) =
             console.log(`You just clicked an Offsite button element! You probably shouldn't be seeing this.`)
         }
 
-        const confirmed = window.confirm(`You are about to open a new window to:\n ${href}`);
-        
+        const confirmed = window.confirm(`Are you sure you want to open a new tab to\n{$href}?`)
+
         if (confirmed) {
             window.open(href, '_blank');
         }
@@ -37,7 +37,7 @@ const OffsiteButton: React.FC<OffsiteButtonProps> = ({ href, ...buttonProps }) =
             {...buttonProps}
             handleClick={handleClick}
         />
-        
+
     )
 }
 

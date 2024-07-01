@@ -26,7 +26,7 @@ const HeaderButton: React.FC<HeaderButtonProps> = ({ href, ...buttonProps }) => 
         event.preventDefault();
 
         if (process.env.NODE_ENV === 'development') {
-            console.log(`You just clicked a Header button element!  You probably shouldn't be seeing this.`)
+            console.log(`You just clicked a Header button element! You probably shouldn't be seeing this.`)
         }
 
         router.push(href);

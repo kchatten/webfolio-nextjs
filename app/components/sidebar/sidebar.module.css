@@ -1,0 +1,27 @@
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 3.5rem;
+
+    height: 100dvh;
+    width: 20dvw;
+
+    color: lime;
+    background-color: black;
+    border-right: 2px solid green;
+}
+
+.toggler{
+    position: sticky;
+    top: 5rem;
+    height: 10%;
+}
+
+@media screen and (min-width: 800px) and (min-height: 800px){
+
+    .sidebar{
+        width: 10dvw;
+        top: 6rem;
+    }
+}

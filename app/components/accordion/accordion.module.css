@@ -1,0 +1,45 @@
+
+.accordion {
+    position: relative;
+    width: 100%;
+}
+
+.accordion .header {
+    height: 2rem;
+    width: 100%;
+    color: inherit;
+    background-color: inherit;
+    border: inherit;
+    border-bottom: 2px solid green;
+}
+
+.accordion .header:hover {
+    background: linear-gradient(0deg, green 0%, black 100%);
+    border-bottom: 2px solid lime;
+}
+
+.accordion .header.active{
+    color: white;
+    background-color: lime;
+    background: linear-gradient(0deg, green 20%, black 100%);
+    border-bottom: 2px solid lime;
+    font-weight:bolder;
+}
+
+.accordion .header.active:hover{
+    color: black;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 1);
+    background: linear-gradient(0deg, lawngreen 20%, green 100%);
+}
+
+.tray {
+    display: block;
+    height: 0;
+    width: 100%;
+    background-color: green;
+}
+
+.tray.extended {
+    height: 200px;
+    border-bottom: 6px solid lime;
+}

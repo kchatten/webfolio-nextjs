@@ -13,8 +13,9 @@
 }
 
 body{
-  height: 100%;
-  width: 100%;
+  height: auto;
+  min-height: 100dvh;
+  width: 100dvw;
   overflow-x: hidden;
 }
 
@@ -22,11 +23,28 @@ main{
   display: flex;
   flex-direction: column;
 
+  height: 100%;
   place-content: center;
   place-items: center;
 
-  min-height: 90%;
-  min-width: 100%;
-
   color: lime;
+}
+
+main.small{
+  height:90dvh;
+}
+
+.post {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  left: 0dvw;
+}
+
+.post main {
+  place-content: unset;
+  place-items: unset;
+  width: 100%;
 }

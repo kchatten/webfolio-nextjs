@@ -3,7 +3,7 @@ import ContentBlock from './components/content/contentblock';
 export default function HomePage() {
 
   const content =
-    <div>
+    <div style={{ placeContent: "center"}}>
       <p style={{ textAlign: "center" }}>
         Hi there, My name is Kyal Chatten and this is my webfolio.
       </p>
@@ -47,8 +47,7 @@ export default function HomePage() {
     </div>
 
   return (
-    <main>
-
+    <main className="small">
       <ContentBlock content={content} />
     </main>
   );

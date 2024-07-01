@@ -7,15 +7,16 @@
 import styles from './contentblock.module.css';
 
 export interface ContentBlockProps {
+    className?: string;
     content: string | React.ReactNode | React.ReactNode[];
 }
 
-const ContentBlock: React.FC<ContentBlockProps> = ( {content} ) => {
+const ContentBlock: React.FC<ContentBlockProps> = ( {className, content} ) => {
 
 
     return (
         <div 
-        className={styles.contentBlock}
+        className={className? className: styles.contentBlock}
         >
             {content}
         </div>

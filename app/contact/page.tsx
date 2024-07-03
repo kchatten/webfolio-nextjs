@@ -1,4 +1,3 @@
-import Image from "next/image";
 import OffsiteButton from "../components/buttons/offsitebutton";
 import styles from "./page.module.css";
 import ContentBlock from "../components/content/contentblock";
@@ -27,7 +26,7 @@ export default function ContactPage() {
 
   return (
     <main className="small">
-      <ContentBlock content={content} />
+      <ContentBlock className={styles.contentBlock} content={content} />
     </main>
   );
 }

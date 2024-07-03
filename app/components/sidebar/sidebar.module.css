@@ -2,25 +2,17 @@
     display: flex;
     flex-direction: column;
     position: sticky;
-    top: 4rem;
 
     height: 75%;
-    width: 20dvw;
+    width: 30dvw;
 
     color: lime;
     background-color: black;
-}
-
-.toggler{
-    position: sticky;
-    top: 5rem;
-    height: 10%;
 }
 
 @media screen and (min-width: 800px) and (min-height: 800px){
 
     .sidebar{
         width: 10dvw;
-        top: 6rem;
     }
 }

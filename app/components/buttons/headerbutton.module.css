@@ -21,10 +21,11 @@
 }
 
 .active{
-    box-sizing: border-box;
     font-size: xx-large;
+    font-weight: bolder;
     color: black;
     background-color: limegreen;
     border-bottom: 6px solid green;
     transition: background-color 0.2s, font-size 0.5s ease;
 }
+

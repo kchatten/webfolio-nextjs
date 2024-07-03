@@ -16,7 +16,7 @@ body{
   height: auto;
   min-height: 100dvh;
   width: 100dvw;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 main{
@@ -35,7 +35,7 @@ main.small{
 }
 
 .post {
-  position: relative;
+  position: static;
   display: flex;
   flex-direction: row;
   height: 90dvh;

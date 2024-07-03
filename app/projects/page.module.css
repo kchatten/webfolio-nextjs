@@ -1,9 +1,11 @@
 .projectContainer{
     display: flex;
+    flex: 1;
     flex-direction: column;
-    width: 50%;
-    height: 50%;
-
+    place-content: center;
     justify-content: space-evenly;
+
+    height: 100%;
+    width: 100%
 }
 

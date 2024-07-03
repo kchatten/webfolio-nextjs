@@ -1,12 +1,8 @@
 .lander{
     padding: .25rem;
-    display: flex;
-    place-content: center;
-    place-items: center;
+    height: 93%;
     font-size: large;
     text-align: justify;
-    height: 100%;
-    width: 100%;
     overflow-y: scroll;
 }
 
@@ -14,6 +10,6 @@
 
     .lander{
         padding: 1rem;
-        width: 90%;
+        height: 100%;
     }
 }

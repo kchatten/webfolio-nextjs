@@ -21,9 +21,6 @@ const RouterButton: React.FC<RouterButtonProps> = ({ className, href, ...buttonP
 
     const router = useRouter();
     const pathname = usePathname();
-    const paths = pathname.split('/');
-    console.log("currHref", href)
-    console.log("paths", paths)
 
     const handleClick = (event: React.MouseEvent<HTMLButtonElement> | React.KeyboardEvent<HTMLButtonElement>) => {
 
@@ -41,7 +38,7 @@ const RouterButton: React.FC<RouterButtonProps> = ({ className, href, ...buttonP
 
         <Button
             {...buttonProps}
-            className={className ? className: paths.includes(href) ? `${styles.headerbutton} ${styles.active}` : `${styles.headerbutton}`}
+            className={className ? className: href === pathname ? `${styles.headerbutton} ${styles.active}` : `${styles.headerbutton}`}
             handleClick={handleClick}
         />
 

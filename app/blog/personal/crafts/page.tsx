@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import ContentBlock from "../../../components/content/contentblock";
 import styles from "./page.module.css"
 
@@ -23,7 +24,7 @@ export default function CookingBlogLandingPage() {
     async function fetchData(): Promise<Post[]> {
       const response = await fetch(`http://localhost:3000/api/posts`);
       const data = await response.json();
-      console.log(data);
+
 
       return Array.isArray(data.body?.post) ? data.body.post : [];
     }
@@ -38,7 +39,7 @@ export default function CookingBlogLandingPage() {
             className={styles.post}
           >
             <h2>{post.title}</h2>
-            {post.img && <img src={post.img} />}
+            {post.img && <Image src={post.img} alt={post.title}/>}
             <p>{post.lastModified}</p>
             <hr />
             <p>{post.content}</p>

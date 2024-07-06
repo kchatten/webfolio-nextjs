@@ -10,6 +10,21 @@
     background-color: black;
 }
 
+.link{
+    padding-top: .5rem;
+    padding-bottom: .25rem;
+    color: white;
+    background: linear-gradient(0deg, rgba(0, 128, 0,0.25) 20%, rgba(0, 0, 0, 0.5) 100%);
+    border: none;
+    border-bottom: 2px solid darkgreen;
+
+}
+
+.link:hover{
+    background: linear-gradient(0deg, rgba(124, 252, 0, 0.5) 20%, rgba(0, 128, 0, 0.5) 100%);
+    font-weight: bolder;
+}
+
 @media screen and (min-width: 800px) and (min-height: 800px){
 
     .sidebar{

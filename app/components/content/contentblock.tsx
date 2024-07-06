@@ -8,11 +8,10 @@ import styles from './contentblock.module.css';
 
 export interface ContentBlockProps {
     className?: string;
-    content: string | React.ReactNode | React.ReactNode[];
+    content: string | React.ReactNode | React.ReactNode[] | Promise<string | React.ReactNode | React.ReactNode[]>;
 }
 
 const ContentBlock: React.FC<ContentBlockProps> = ( {className, content} ) => {
-
 
     return (
         <div 

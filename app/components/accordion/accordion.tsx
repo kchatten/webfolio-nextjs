@@ -4,14 +4,16 @@ import Button from '../buttons/button';
 import { useRef } from 'react';
 
 import styles from './accordion.module.css';
+import { usePathname } from 'next/navigation';
 
 export interface AccordionProps {
     title: string,
     className?: string;
     trayStyle?: string;
+    children?: React.ReactNode[] | React.ReactNode;
 }
 
-const Accordion: React.FC<AccordionProps> = ({ title, className, trayStyle, }) => {
+const Accordion: React.FC<AccordionProps> = ({ title, className, trayStyle, children }) => {
 
     const titleRef = useRef<HTMLButtonElement>(null);
     const trayRef = useRef<HTMLSpanElement>(null);
@@ -59,7 +61,7 @@ const Accordion: React.FC<AccordionProps> = ({ title, className, trayStyle, }) =
         >
             <Button
                 ref={titleRef}
-                className={className ? className : styles.header}
+                className={className ? className: styles.header}
                 textContent={title}
                 handleClick={handleClick}
             />
@@ -67,6 +69,7 @@ const Accordion: React.FC<AccordionProps> = ({ title, className, trayStyle, }) =
             <span
                 ref={trayRef}
                 className={trayStyle ? trayStyle : styles.tray}>
+                    {children}
             </span>
         </span>
     )

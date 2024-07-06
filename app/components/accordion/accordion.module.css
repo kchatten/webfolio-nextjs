@@ -32,13 +32,23 @@
 }
 
 .tray {
-    display: block;
+    display: flex;
+    flex-direction: column;
     height: 0;
     width: 100%;
-    background-color: green;
+    background: linear-gradient(180deg, green 20%, black 100%);
 }
 
 .tray.extended {
     height: 200px;
     border-bottom: 6px solid lime;
+}
+
+.tray button{
+    display: none;
+}
+
+.tray.extended button{
+    display: block;
+    width:100%;
 }

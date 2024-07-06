@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import HeaderButton from '../buttons/headerbutton';
+import HeaderButton from '../buttons/routerbutton';
 import styles from '../buttons/headerbutton.module.css';
 
 // Mock useRouter and usePathname

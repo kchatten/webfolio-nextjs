@@ -9,17 +9,21 @@
 
 import { useRouter, usePathname } from 'next/navigation';
 import Button, { ButtonProps } from './button';
-import styles from './headerbutton.module.css';
+import styles from './routerbutton.module.css';
 
 
-interface HeaderButtonProps extends ButtonProps {
+interface RouterButtonProps extends ButtonProps {
     href: string;
+    className?: string;
 }
 
-const HeaderButton: React.FC<HeaderButtonProps> = ({ href, ...buttonProps }) => {
+const RouterButton: React.FC<RouterButtonProps> = ({ className, href, ...buttonProps }) => {
 
     const router = useRouter();
     const pathname = usePathname();
+    const paths = pathname.split('/');
+    console.log("currHref", href)
+    console.log("paths", paths)
 
     const handleClick = (event: React.MouseEvent<HTMLButtonElement> | React.KeyboardEvent<HTMLButtonElement>) => {
 
@@ -37,7 +41,7 @@ const HeaderButton: React.FC<HeaderButtonProps> = ({ href, ...buttonProps }) => 
 
         <Button
             {...buttonProps}
-            className={href === pathname ? `${styles.headerbutton} ${styles.active}` : `${styles.headerbutton}`}
+            className={className ? className: paths.includes(href) ? `${styles.headerbutton} ${styles.active}` : `${styles.headerbutton}`}
             handleClick={handleClick}
         />
 
@@ -45,4 +49,4 @@ const HeaderButton: React.FC<HeaderButtonProps> = ({ href, ...buttonProps }) => 
 }
 
 
-export default HeaderButton;
+export default RouterButton;

@@ -5,7 +5,7 @@ import { useEffect, useRef } from 'react';
 
 import styles from './header.module.css';
 
-import HeaderButton from '../buttons/headerbutton';
+import HeaderButton from '../buttons/routerbutton';
 
 
 // #region HELPER FUNCTIONS RELATED TO BANNER TEXT 

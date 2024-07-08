@@ -17,6 +17,7 @@ const Accordion: React.FC<AccordionProps> = ({ title, className, trayStyle, chil
 
     const titleRef = useRef<HTMLButtonElement>(null);
     const trayRef = useRef<HTMLSpanElement>(null);
+    
 
     const handleClick = () => {
 

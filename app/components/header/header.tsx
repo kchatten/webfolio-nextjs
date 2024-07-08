@@ -5,7 +5,7 @@ import { useEffect, useRef } from 'react';
 
 import styles from './header.module.css';
 
-import HeaderButton from '../buttons/routerbutton';
+import RouterButton from '../buttons/routerbutton';
 
 
 // #region HELPER FUNCTIONS RELATED TO BANNER TEXT 
@@ -78,7 +78,7 @@ const Header = () => {
             <div className={styles.buttonContainer}>
                 {buttonsArray.map((button, index) => {
                     return (
-                        <HeaderButton
+                        <RouterButton
                             key={index}
                             textContent={button.textContent}
                             href={button.href}

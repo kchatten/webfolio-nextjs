@@ -8,7 +8,6 @@ import styles from './sidebar.module.css';
 const Sidebar = () => {
 
     const activePath = usePathname();
-    console.log(activePath);
 
     return (
         <aside

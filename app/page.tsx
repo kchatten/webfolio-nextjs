@@ -2,8 +2,8 @@ import ContentBlock from './components/content/contentblock';
 
 export default function HomePage() {
 
-  const content =
-    <div style={{ placeContent: "center"}}>
+  const children =
+    <div style={{ placeContent: "center" }}>
       <p style={{ textAlign: "center" }}>
         Hi there, My name is Kyal Chatten and this is my webfolio.
       </p>
@@ -48,7 +48,9 @@ export default function HomePage() {
 
   return (
     <main className="small">
-      <ContentBlock content={content} />
+      <ContentBlock>
+        {children}
+      </ContentBlock>
     </main>
   );
 }

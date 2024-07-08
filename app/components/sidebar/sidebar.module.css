@@ -4,7 +4,7 @@
     position: sticky;
 
     height: 75%;
-    width: 30dvw;
+    width: 40dvw;
 
     color: lime;
     background-color: black;
@@ -28,6 +28,12 @@
 .active{
     background: linear-gradient(0deg, rgba(124, 252, 0, 0.5) 20%, rgba(0, 128, 0, 0.5) 100%);
     font-weight: bolder;
+}
+
+@media screen and (orientation: landscape) and (max-height: 450px) {
+    .sidebar{
+        width: 30dvw;
+    }
 }
 
 @media screen and (min-width: 800px) and (min-height: 800px){

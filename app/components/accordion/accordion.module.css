@@ -19,9 +19,6 @@
 }
 
 .accordion .header.active{
-    /* color: white;
-    background-color: lime;
-    background: linear-gradient(0deg, green 20%, black 100%); */
     border-bottom: 2px solid lime;
     font-weight:bolder;
 }

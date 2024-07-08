@@ -15,7 +15,9 @@ const ContentBlock: React.FC<ContentBlockProps> = ( {className, children} ) => {
     return (
         <div 
         className={className? className: styles.contentBlock}
-        children={children} />
+        >
+        {children}
+        </div>
     )
 }
 

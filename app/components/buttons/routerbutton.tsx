@@ -14,9 +14,10 @@ import styles from './routerbutton.module.css';
 interface RouterButtonProps extends ButtonProps {
     href: string;
     className?: string;
+    reload?: boolean;
 }
 
-const RouterButton: React.FC<RouterButtonProps> = ({ className, href, ...buttonProps }) => {
+const RouterButton: React.FC<RouterButtonProps> = ({ className, href, reload, ...buttonProps }) => {
     const router = useRouter();
     const pathname = usePathname();
 
@@ -25,9 +26,15 @@ const RouterButton: React.FC<RouterButtonProps> = ({ className, href, ...buttonP
 
         if (process.env.NODE_ENV === 'development') {
             console.log(`You just clicked a Header button element! You probably shouldn't be seeing this.`);
-        }
+        };
 
-        router.push(href);
+        if (reload) {
+            router.push(href);
+            setTimeout(() => { window.location.reload();}, 1);
+
+        } else {
+            router.push(href);
+        };
     }
 
     const isActive = () => {
@@ -40,7 +47,7 @@ const RouterButton: React.FC<RouterButtonProps> = ({ className, href, ...buttonP
     return (
         <Button
             {...buttonProps}
-            className={className ? className : isActive() ? `${styles.headerbutton} ${styles.active}` : `${styles.headerbutton}`}
+            className={className ? className : isActive() ? `${styles.routerButton} ${styles.active}` : `${styles.routerButton}`}
             handleClick={handleClick}
         />
     )

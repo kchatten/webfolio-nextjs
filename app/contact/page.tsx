@@ -5,7 +5,7 @@ import ContentBlock from "../components/content/contentblock";
 export default function ContactPage() {
 
   return (
-    <main className="small">
+    <main>
       <ContentBlock className={styles.contentBlock}>
         <div className={styles.contactContainer}>
 

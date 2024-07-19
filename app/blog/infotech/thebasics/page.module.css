@@ -31,14 +31,6 @@
     border: none;
 }
 
-.contentBlock p{
-    margin-bottom: 1rem;
-}
-
-.contentBlock p:last-of-type{
-    margin-bottom: unset;
-}
-
 .link{
     color: yellowgreen;
     background: transparent !important;

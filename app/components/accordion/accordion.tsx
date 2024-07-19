@@ -1,25 +1,40 @@
 'use client'
 
 import Button from '../buttons/button';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 import styles from './accordion.module.css';
 import { usePathname } from 'next/navigation';
 
 export interface AccordionProps {
     title: string,
+    titleShorthand?: string;
     className?: string;
     trayStyle?: string;
     children?: React.ReactNode[] | React.ReactNode;
 }
 
-const Accordion: React.FC<AccordionProps> = ({ title, className, trayStyle, children }) => {
+const Accordion: React.FC<AccordionProps> = ({ title, titleShorthand, className, trayStyle, children }) => {
 
     const titleRef = useRef<HTMLButtonElement>(null);
     const trayRef = useRef<HTMLSpanElement>(null);
-    
+    const pathname = usePathname();
 
-    const handleClick = () => {
+    useEffect(() => {
+        if (titleShorthand) {
+            if (pathname.includes(titleShorthand)) {
+                if (titleRef.current) {
+                    titleRef.current.setAttribute("class", `${styles.active} ${styles.header}`)
+                    if (trayRef.current) {
+                        trayRef.current.classList.add(styles.extended);
+                    }
+                }
+            }
+        }
+        //eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []) // Set styling on mount based on the current active path.
+
+    const handleClick = () => { // Handle styling independentatly of state for efficiency.
 
         if (titleRef.current) {
             titleRef.current.classList.toggle(styles.active);
@@ -62,7 +77,7 @@ const Accordion: React.FC<AccordionProps> = ({ title, className, trayStyle, chil
         >
             <Button
                 ref={titleRef}
-                className={className ? className: styles.header}
+                className={className ? className : styles.header}
                 textContent={title}
                 handleClick={handleClick}
             />
@@ -70,7 +85,7 @@ const Accordion: React.FC<AccordionProps> = ({ title, className, trayStyle, chil
             <span
                 ref={trayRef}
                 className={trayStyle ? trayStyle : styles.tray}>
-                    {children}
+                {children}
             </span>
         </span>
     )

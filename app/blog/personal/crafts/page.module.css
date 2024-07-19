@@ -1,6 +1,7 @@
 .lander{
     padding: 1rem;
-    height: 93%;
+    height: 100%;
+    width: 100%;
     font-size: large;
     text-align: justify;
     overflow-y: scroll;

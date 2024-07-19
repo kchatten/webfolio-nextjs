@@ -15,18 +15,37 @@
     border-bottom: 2px solid green;
 }
 
-.header span{
+.bannerText{
     padding-left: 0.5rem;
     position: relative;
     color: lime;
-
+    background-color: black;
+    border: none;
     align-self: center;
 }
 
+.bannerText:hover{
+    cursor: pointer;
+}
+
 .buttonContainer{
+    position: relative;
     display: inherit;
     flex-direction: row;
     place-items: center;
+    border-bottom: 2px solid green;
+    top: 1px;
+}
+
+.buttonContainer button{
+    top: 1px;
+}
+
+
+@media screen and (min-width: 800px) and (min-height: 800px) {
+
+    .buttonContainer{}
+
 }
 
 @media screen and (orientation: portrait) {
@@ -34,7 +53,7 @@
         justify-content: center;
     }
 
-    .header span{
+    .bannerText{
         display: none;
     }
 }

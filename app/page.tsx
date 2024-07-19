@@ -9,7 +9,7 @@ export default function HomePage() {
       </p>
       <br />
       <p style={{ textAlign: "center" }}>
-        I&apos;m a Web Developer, technical support specialist, techology enthusiast and lover of food, felines, and all forms of interactive media. I&apos;m currently based out of Ontario, Canada.
+        I&apos;m a Web Developer, technical support specialist, technology enthusiast and lover of food, felines, and all forms of interactive media. I&apos;m currently based out of Ontario, Canada.
       </p>
       <br />
       <p>
@@ -47,7 +47,7 @@ export default function HomePage() {
     </div>
 
   return (
-    <main className="small">
+    <main>
       <ContentBlock>
         {children}
       </ContentBlock>

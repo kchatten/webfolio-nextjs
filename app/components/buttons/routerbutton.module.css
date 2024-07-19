@@ -1,9 +1,10 @@
-.headerbutton{
-    position: relative;
-    top: 2px;
+.routerButton {
     padding: 0.25rem;
-    height: 100%;
+    position: relative;
+
+    height: calc(100% + 4px);
     min-width: 20dvw;
+    max-width: 99%;
     font-weight: 100;
     color: lime;
     background-color: black;
@@ -12,7 +13,7 @@
     transition: background-color 0.2s, font-size 0.5s ease;
 }
 
-.headerbutton:hover{
+.routerButton:hover {
     color: lime;
     background-color: green;
     border-bottom: 2px solid limegreen;
@@ -20,12 +21,19 @@
     transition: background-color 0.2s, font-size 0.5s ease;
 }
 
-.active{
+.active {
     font-size: xx-large;
     font-weight: bolder;
     color: black;
     background-color: limegreen;
-    border-bottom: 6px solid green;
+    border-top: 4px gold;
+    border-bottom: 6px green;
+    border-style: dashed none solid none ;
     transition: background-color 0.2s, font-size 0.5s ease;
 }
 
+.active:hover {
+
+    border-bottom: 6px limegreen;
+    border-style: dashed none solid none;
+}

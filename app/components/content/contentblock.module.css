@@ -1,8 +1,9 @@
 .contentBlock{
+    outline: none !important;
     padding: 1rem;
     display: flex;
+    flex-direction: column;
 
-    place-content: center;
     place-items: center;
     
     font-size: large;

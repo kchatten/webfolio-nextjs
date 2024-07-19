@@ -5,7 +5,7 @@
 }
 
 .accordion .header {
-    height: 2rem;
+    height: 2.5rem;
     width: 100%;
     color: inherit;
     background-color: inherit;
@@ -16,16 +16,16 @@
 .accordion .header:hover {
     background: linear-gradient(0deg, green 0%, black 100%);
     border-bottom: 2px solid lime;
-}
-
-.accordion .header.active{
-    border-bottom: 2px solid lime;
-    font-weight:bolder;
+    cursor: pointer;
 }
 
 .accordion .header.active{
     color: black;
     background: linear-gradient(0deg, lawngreen 20%, green 100%);
+    border: 4px dotted goldenrod;
+    border-top: 4px dotted gold;
+    border-bottom: 4px dotted darkgoldenrod;
+    font-weight: bolder;
 }
 
 .tray {
@@ -48,4 +48,5 @@
 .tray.extended button{
     display: block;
     width:100%;
+    cursor: pointer;
 }

@@ -10,12 +10,15 @@ import React, { forwardRef } from 'react';
 import styles from './button.module.css';
 
 export interface ButtonProps {
+    ref?: React.RefObject<HTMLButtonElement>; // Allows a button to have a reference.
+    tabIndex?: number; // Allows a button to have a custom tab index.
+    id?: string; // Allows the button to have a defined id.
     className?: string; // Allows a button to be styled through {styles.button} for example.
     textContent?: string; // Allows a button to contain a string for display purposes.
     handleClick?: (event: React.MouseEvent<HTMLButtonElement> | React.KeyboardEvent<HTMLButtonElement>) => void; // Allows a handleClick function to be passed into the button.
 }
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ className, textContent, handleClick }, ref) => {
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ tabIndex, id, className, textContent, handleClick }, ref) => {
 
     function handleDefaultButtonBehaviour(event: React.MouseEvent<HTMLButtonElement> | React.KeyboardEvent<HTMLButtonElement>) {
 
@@ -29,6 +32,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ className, textCont
     return (
 
         <button
+            id={id}
+            tabIndex={tabIndex? tabIndex : 0}
             ref={ref}
             className={className ? className : `${styles.button}`}
             onClick={handleClick ? handleClick : handleDefaultButtonBehaviour}

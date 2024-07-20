@@ -115,7 +115,7 @@ export default function WebDevBasicsPage() {
             That&apos;s right. Everything you&apos;re seeing right now made its way from my web server to your browser client entirely as combinations and collections of prearranged 1&apos;s and 0&apos;s and it got there based on a different set of combination and collection of 1&apos;s and 0&apos;s.
             Not only that, but the instructions that organized that data within your browser, the browser window within your monitor&apos;s viewport and even the position of your cursor as you move it around within your screen to click on buttons, and even all the cascading effects caused by those clicks?
             1&apos;s and 0&apos;s!
-            That's a lot of work for just two numbers!
+            That&apos;s a lot of work for just two numbers!
             Technology is incredible!
           </p>
           <p>
@@ -141,14 +141,14 @@ export default function WebDevBasicsPage() {
             Ultimately these protocols help standardize and in theory make the internet safer.
           </p>
           <p>
-            So now that we know how data gets from one computer to another, let's talk about the &apos;last mile&apos;.
-            If you're unfamiliar with the phrase, it simply means the final leg of the data's transmission before it reaches its destination.
+            So now that we know how data gets from one computer to another, let&apos;s talk about the &apos;last mile&apos;.
+            If you&apos;re unfamiliar with the phrase, it simply means the final leg of the data&apos;s transmission before it reaches its destination.
             &quot;But the files can already be routed to my machine!&quot; I hear you saying. Which is true! It can be routed to your machine. That however isn&apos;t entirely sufficient.
           </p>
           <p>
-            The process that we've described so far is much like the regular process for mailing a letter in real life.
-            We have to gather all of the contents of the package and make sure they fit in the envelope and that everything I'm sending is legal to send (which is to say that it fits the specifications set by the postal carrier for mail they will deliver), then I address the letter and send it on it's way.
-            But what we've actually done so far is addressed the package for your <em>building</em>.
+            The process that we&apos;ve described so far is much like the regular process for mailing a letter in real life.
+            We have to gather all of the contents of the package and make sure they fit in the envelope and that everything I&apos;m sending is legal to send (which is to say that it fits the specifications set by the postal carrier for mail they will deliver), then I address the letter and send it on it&apos;s way.
+            But what we&apos;ve actually done so far is addressed the package for your <em>building</em>.
             There is still one more step in addressing that is crucial for ensuring a packet is sent to the correct destination.
           </p>
           <p>
@@ -156,12 +156,12 @@ export default function WebDevBasicsPage() {
             A computer is much like an apartment building, with every service and application having its own unique address within the apartment building itself.
             Ports are very similar to old telephone switchboards.
             Each port is like a switch on a switchboard, and each switch can only maintain a single connection at one time.
-            When you're requesting resources from a web server using the HTTP protocol, you are actually making that request to the web servers IP address at port 80.
+            When you&apos;re requesting resources from a web server using the HTTP protocol, you are actually making that request to the web servers IP address at port 80.
             When this connection is established, some magic happens that pushes this connection off of port 80 and onto what is called an ephemeral port which frees up port 80 for more HTTP connection requests.
           </p>
           <p>
             This is a gross oversimplification because the topic is really out of scope for this article but the main distinction to take away is that the port is the address for a specific application or service on your device.
-            Without ports, we we wouldn't be able to request a web page from a web server to be returned and served by a web browser.
+            Without ports, we we wouldn&apos;t be able to request a web page from a web server to be returned and served by a web browser.
             Imagine an apartment building with no apartment numbers.
             That would be one chaotic mail room!
           </p>
@@ -182,7 +182,7 @@ export default function WebDevBasicsPage() {
             This topic is a bit extensive and you may have already noted that I inappropriately refer to Node.js as a web server software which is not accurate.
             However for the sake of brevity and keeping this article concise, the misattribution and those like it should be excused to allow the content to be more approachable.
             At this point in the article I do not believe it pertinent that you know that Apache is a web server software that works straight out of the box, or that Express.js is package that provides you the tools to write your own web server.
-            This is because the landscape is quite vast and I'm making no presuppositions about what language or technologies you know or are interested in.
+            This is because the landscape is quite vast and I&apos;m making no presuppositions about what language or technologies you know or are interested in.
             This article is intended to cover the overarching concept of web development.
           </p>
 
@@ -227,7 +227,7 @@ export default function WebDevBasicsPage() {
             JavaScript is a programming language that was designed for the development of dynamic and interactive web applications by allowing asynchronous communication with servers, dynamically updating rendered content, and enhanced interactivity with user driven events,
           </p>
         </ContentBlock>
-
+ 
         <ContentBlock className={styles.contentBlock}>
           <FocusButton id="article5" focus="article5TOC" textContent="How is a website built?" className={styles.sectionHeader} />
           <p>

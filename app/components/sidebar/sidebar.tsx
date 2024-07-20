@@ -1,6 +1,7 @@
 'use client';
 
-import { usePathname } from 'next/navigation'
+import { usePathname } from 'next/navigation';
+import { useEffect } from 'react';
 import Accordion from '../accordion/accordion';
 import RouterButton from '../buttons/routerbutton';
 import styles from './sidebar.module.css';
@@ -8,6 +9,10 @@ import styles from './sidebar.module.css';
 const Sidebar = () => {
 
     const activePath = usePathname();
+
+    useEffect(() => {
+        window.addEventListener('popstate', () => {window.location.reload();});
+    }, []);
 
     return (
         <aside

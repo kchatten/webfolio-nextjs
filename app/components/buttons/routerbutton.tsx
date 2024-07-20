@@ -30,7 +30,7 @@ const RouterButton: React.FC<RouterButtonProps> = ({ className, href, reload, ..
 
         if (reload) {
             router.push(href);
-            setTimeout(() => { window.location.reload();}, 1);
+            setTimeout(() => { window.location.reload();}, 10);
 
         } else {
             router.push(href);

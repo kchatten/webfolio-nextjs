@@ -34,11 +34,11 @@
     flex-direction: row;
     place-items: center;
     border-bottom: 2px solid green;
-    top: 1px;
+    top: 2px;
 }
 
 .buttonContainer button{
-    top: 1px;
+    top: 2px;
 }
 
 

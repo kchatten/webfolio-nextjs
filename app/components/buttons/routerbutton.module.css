@@ -1,10 +1,9 @@
 .routerButton {
-    padding: 0.25rem;
     position: relative;
 
-    height: calc(100% + 4px);
+    height: 100%;
     min-width: 20dvw;
-    max-width: 99%;
+    max-width: 100%;
     font-weight: 100;
     color: lime;
     background-color: black;

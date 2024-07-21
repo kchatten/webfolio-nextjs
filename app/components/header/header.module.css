@@ -33,19 +33,11 @@
     display: inherit;
     flex-direction: row;
     place-items: center;
-    border-bottom: 2px solid green;
-    top: 2px;
+    top: 1px;
 }
 
 .buttonContainer button{
-    top: 2px;
-}
-
-
-@media screen and (min-width: 800px) and (min-height: 800px) {
-
-    .buttonContainer{}
-
+    height: calc(100% + 2px);
 }
 
 @media screen and (orientation: portrait) {

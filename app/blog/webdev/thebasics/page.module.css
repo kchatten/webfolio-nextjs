@@ -10,11 +10,13 @@
 }
 
 .contentBlock {
+    position: relative;
     outline: none !important;
     padding: .25rem;
 
     display: flex;
     flex-direction: column;
+    
 
     font-size: unset;
     text-justify:none;
@@ -25,10 +27,6 @@
 
     border: none;
     border-bottom: 2px solid green;
-}
-
-.contentBlock:last-of-type {
-    border: none;
 }
 
 .contentBlock p{

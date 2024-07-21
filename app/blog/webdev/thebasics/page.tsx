@@ -1,8 +1,12 @@
+import Image from 'next/image';
+import ContentBlock from "@/app/components/content/contentblock";
 import FocusButton from "@/app/components/buttons/focusbutton";
-import ContentBlock from "../../../components/content/contentblock";
-import styles from "./page.module.css"
 import RouterButton from "@/app/components/buttons/routerbutton";
+import styles from "./page.module.css";
 
+import imgNetworks from '/public/networks.png';
+import abstractIPs from '/public/abstractip.png';;
+import portBuilding from '/public/buildingport.png'
 
 export default function WebDevBasicsPage() {
 
@@ -19,7 +23,6 @@ export default function WebDevBasicsPage() {
             <li><FocusButton id="article3TOC" focus="article3" textContent="What is a web server?" className={styles.toc} /></li>
             <li><FocusButton id="article4TOC" focus="article4" textContent="What is a website?" className={styles.toc} /></li>
             <li><FocusButton id="article5TOC" focus="article5" textContent="How are websites built?" className={styles.toc} /></li>
-            <li><FocusButton id="article6TOC" focus="article6" textContent="How are websites accessible?" className={styles.toc} /></li>
           </ol>
         </ContentBlock>
 
@@ -53,9 +56,20 @@ export default function WebDevBasicsPage() {
 
         <ContentBlock className={styles.contentBlock}>
           <FocusButton id="article1" focus="article1TOC" textContent="What is the internet?" className={styles.sectionHeader} />
+
+          <div style={{ position: 'relative', display: 'grid', alignContent: 'center', overflowX: 'scroll', width: '100%' }}>
+            <Image
+              src={imgNetworks}
+              alt="a diagram that shows how end devices like computers and phones connect to the internet through various networking devices."
+            />
+          </div>
+
           <p>
             The internet at its core is a network of networks. End devices like the one you&apos;re reading this article on connect to the internet through a series of Routers.
             When you purchase internet service from an ISP (or Internet Service Provider), you are generally provided a device that is a combination Modem, Router and Switch.
+          </p>
+
+          <p>
             While separate versions of these devices do exist, the combination device you are likely most familiar with is deployed for its compact form factor and its relatively powerful capabilities.
             A <span style={{ textDecoration: "underline" }}>Mo</span>dulator-<span style={{ textDecoration: "underline" }}>dem</span>odulator is the device that converts your binary digital data into a format that can be transmitted across an analog medium,
             like electrical impulses, radio waves, or pulses of light. The Switch is a device that connects the devices on any particular network segment together and a Router is like a Switch but connects network segments rather than devices together.
@@ -81,13 +95,22 @@ export default function WebDevBasicsPage() {
             After however many hops necessary, the data winds up on a Router that is connected to your network.
             When your Router receives the broadcast asking if anyone knows you, it says &quot;Hey, I know that person!&quot; and it takes the data and passes it along to you.
           </p>
-
           <p>
             You may already be familiar with IP addresses that look similar to &apos;192.168.2.1&apos;.
             An IP (Internet Protocol) address is a unique identifier assigned to a single device, or in some cases a group of devices.
             For example, multiple devices might share a single IP address for load balancing purposes or when subscribed to IP-based policies such as Access Control Lists and Group Policy Objects.
             IP addresses serve as a fundamental component of network communication by allowing devices to identify and communicate with each other.
           </p>
+
+
+          <div style={{ position: 'relative', display: 'grid', alignContent: 'center', overflowX: 'scroll', width: '100%' }}>
+            <Image
+              src={abstractIPs}
+              alt="a logical ip address; 192.168.2.1 and its binary conversion 11000000.10101000.00000010.00000001"
+            />
+          </div>
+
+
           <p>
             IP addresses are four octets long, and an octet is a byte comprised of eight bits.
             That means the IP address 192.168.2.1 is actually 110000000.10101000.00000010.00000001.
@@ -112,7 +135,7 @@ export default function WebDevBasicsPage() {
           <p>
             It would be a lot more difficult to remember and relay these addresses from person to person even though it is the only way a computer could understand it.
             So we have developed technologies called compilers that solely focus on taking higher level languages that are easier for us as developers to write and translates it all down into binary.
-            That&apos;s right. Everything you&apos;re seeing right now made its way from my web server to your browser client entirely as combinations and collections of prearranged 1&apos;s and 0&apos;s and it got there based on a different set of combination and collection of 1&apos;s and 0&apos;s.
+            That&apos;s right. Everything you&apos;re seeing right now made its way from my web server to your browser client entirely as combinations and collections of prearranged 1&apos;s and 0&apos;s and it got there based on a different set of combinations and collections of 1&apos;s and 0&apos;s.
             Not only that, but the instructions that organized that data within your browser, the browser window within your monitor&apos;s viewport and even the position of your cursor as you move it around within your screen to click on buttons, and even all the cascading effects caused by those clicks?
             1&apos;s and 0&apos;s!
             That&apos;s a lot of work for just two numbers!
@@ -124,11 +147,11 @@ export default function WebDevBasicsPage() {
             These frames and headers are added sequentially in such a way that aids in the efficiency of data transfer by ensuring that data is segmented logically, making the necessary information readily accessible at each step of transmission and de-encapsulation.
             There is a lot more to this topic that you can find <RouterButton href="/blog/infotech/networking" textContent="here" className={styles.link} reload={true} />.
             But for now what you need to know is that this process of de/encapsulation is a combination of two protocols.
-            The TCP/IP (or Transmission Control Protocol / Internet Protocol) suite of protocols form the primary set of rules that governs communication on the internet.
+            The TCP/IP (or Transmission Control Protocol / Internet Protocol) and UDP/IP (or User Datagram Protocol) suite of protocols form the primary set of rules that governs communication on the internet.
           </p>
           <p>
             As we discussed earlier, the Internet Protocol is a protocol that helps devices identify and communicate with one another by giving them unique identifiers so that data can be sent from one device to another across the vast interconnected network of networks.
-            The Transmission Control Protocol on the other hand is a protocol that dictates the standard of how data must be <em>structured</em> so that it can be transmitted across the internet.
+            The Transmission Control Protocol on the other hand is a protocol that dictates the standard of how data and communications must be <em>structured</em> so that it can be transmitted across the internet.
             These aren&apos;t the only protocols you&apos;ve interacted with. I highly recommend visiting the Networking section to gain a better understanding of the wide variety of protocols and how they interact with one another.
             The main distinction that I would like to point out here is that these two protocols operate at lower levels of the networking model, which is to say these are rules for devices that are concerned with the transmission of any and all data across the internet because they are interacting with the digital binary data and the analogous transmission mediums.
           </p>
@@ -143,22 +166,30 @@ export default function WebDevBasicsPage() {
           <p>
             So now that we know how data gets from one computer to another, let&apos;s talk about the &apos;last mile&apos;.
             If you&apos;re unfamiliar with the phrase, it simply means the final leg of the data&apos;s transmission before it reaches its destination.
-            &quot;But the files can already be routed to my machine!&quot; I hear you saying. Which is true! It can be routed to your machine. That however isn&apos;t entirely sufficient.
+            &quot;But the files can already be routed to my device!&quot; I hear you saying. Which is true! It can be routed to your device. That however isn&apos;t entirely sufficient.
           </p>
           <p>
-            The process that we&apos;ve described so far is much like the regular process for mailing a letter in real life.
-            We have to gather all of the contents of the package and make sure they fit in the envelope and that everything I&apos;m sending is legal to send (which is to say that it fits the specifications set by the postal carrier for mail they will deliver), then I address the letter and send it on it&apos;s way.
+            The process that we&apos;ve described so far is much like the regular process for mailing a letter or package in real life.
+            We have to gather all of the contents of the package and make sure they fit in the envelope and that everything I&apos;m sending is legal to send, which is to say that it fits the specifications set by the postal carrier for mail they will deliver, then I address the letter and send it on it&apos;s way.
             But what we&apos;ve actually done so far is addressed the package for your <em>building</em>.
             There is still one more step in addressing that is crucial for ensuring a packet is sent to the correct destination.
           </p>
+
+          <div style={{ position: 'relative', display: 'grid', alignContent: 'center', overflowX: 'scroll', width: '100%' }}>
+            <Image
+              src={portBuilding}
+              alt="an apartment building labeled with the IP address 192.168.2.1 that has many port addresses labeling the windows"
+            />
+          </div>
           <p>
             Ports.
             A computer is much like an apartment building, with every service and application having its own unique address within the apartment building itself.
-            Ports are very similar to old telephone switchboards.
-            Each port is like a switch on a switchboard, and each switch can only maintain a single connection at one time.
+            Ports are also very similar to old telephone switchboards.
+            Each port must be directly connected with one another, and each switch or port can only maintain a single connection at one time.
             When you&apos;re requesting resources from a web server using the HTTP protocol, you are actually making that request to the web servers IP address at port 80.
             When this connection is established, some magic happens that pushes this connection off of port 80 and onto what is called an ephemeral port which frees up port 80 for more HTTP connection requests.
           </p>
+
           <p>
             This is a gross oversimplification because the topic is really out of scope for this article but the main distinction to take away is that the port is the address for a specific application or service on your device.
             Without ports, we we wouldn&apos;t be able to request a web page from a web server to be returned and served by a web browser.
@@ -193,10 +224,10 @@ export default function WebDevBasicsPage() {
           <FocusButton id="article4" focus="article4TOC" textContent="What is a website" className={styles.sectionHeader} />
           <p>
             So now that we&apos;ve talked a bit about the foundational networking concepts that helped establish the World Wide Web (commonly referred to as the internet), we now need to talk about the actual data being transported on the network.
-            Pictures, text, and other forms of media are collected into relevant groups and are sent back to the web client. 
-            These groups are webpages. 
+            Pictures, text, and other forms of media are collected into relevant groups and are sent back to the web client.
+            These groups are webpages.
             A website is a collection of webpages and other resources that are structured and presented in a logical and intuitive manner.
-            These web pages are written in HTML (or Hyper Text Markup Language), which is a derivative of Markup. 
+            These web pages are written in HTML (or Hyper Text Markup Language), which is a derivative of Markup.
             Markup is a rich text formatting language that allowed you to render and apply side effects to raw text and create more visually complex arrangements.
             Markup however is quite restrictive and narrow in it&apos;s functional scope.
             HTML broadened the capabilities of Markup by allowing you to render and apply side effects to <em>elements</em> of which text was included but not limited to.
@@ -213,9 +244,9 @@ export default function WebDevBasicsPage() {
             While HTML is the skeleton of the website, providing the framing and the content that we wish to display we still need to determine how that content should be rendered.
             The technology CSS (or Cascading Style Sheets) is exactly like the skin of our website and is what allows us to control how our elements are rendered.
             This too is a subject deserving of individual attention so I will leave that for another section but I would like to highlight the <em>cascading</em> aspect of cascading style sheets.
-            Unlike how we may be able to take a book and jam our thumb half way into it to jump into the middle, the same is simply not possible for electronic files. 
+            Unlike how we may be able to take a book and jam our thumb half way into it to jump into the middle, the same is simply not possible for electronic files.
             Electronic files must be read sequentially and this creates a unique environment for a front-end web developer when we are dealing with CSS specifically.
-            When a CSS file is loaded, it loads styles in from the top of the file to the bottom of the file. 
+            When a CSS file is loaded, it loads styles in from the top of the file to the bottom of the file.
             If you set the color of a paragraph element twice in a CSS file, the second assignment will take precedence.
             If you have new stylings load in after a style has already been loaded, the new stylings take precedence.
             There is a way to circumvent this as necessary but it is pertinent to keep this cascading nature in mind.
@@ -227,7 +258,7 @@ export default function WebDevBasicsPage() {
             JavaScript is a programming language that was designed for the development of dynamic and interactive web applications by allowing asynchronous communication with servers, dynamically updating rendered content, and enhanced interactivity with user driven events,
           </p>
         </ContentBlock>
- 
+
         <ContentBlock className={styles.contentBlock}>
           <FocusButton id="article5" focus="article5TOC" textContent="How is a website built?" className={styles.sectionHeader} />
           <p>
@@ -237,8 +268,8 @@ export default function WebDevBasicsPage() {
 
             There also exists a wide variety of programming languages other than JavaScript that aide in the development, production and deployment of websites and web applications.
             Back-end languages like PHP, Ruby, Python and C# are focused on server-side logic, business logic and database interaction.
-            User authentication, data storage, manipulation and even generation are all examples of functionality provided by these languages. 
-      
+            User authentication, data storage, manipulation and even generation are all examples of functionality provided by these languages.
+
           </p>
         </ContentBlock>
       </ContentBlock>

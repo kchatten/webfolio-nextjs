@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, } from 'react';
+import { usePathname } from 'next/navigation';
 
 import styles from './header.module.css';
 
@@ -31,6 +32,8 @@ const generateSiteName = () => {
 // #endregion END OF HELPER FUNCTIONS 
 
 const Header = () => {
+
+    let pathname = usePathname();
 
     const bannerTextRef = useRef<HTMLButtonElement>(null);
 
@@ -92,19 +95,23 @@ const Header = () => {
     const handleClick = ((event: React.MouseEvent<HTMLButtonElement> | React.KeyboardEvent<HTMLButtonElement>) => {
         event.preventDefault();
 
-        if (bannerTextRef.current) {
-            let body = bannerTextRef.current.closest("body") // Closest can only traverse in one direction to the root
-            let section = body?.querySelector("section")
-            let sidebar = section?.querySelector("aside")
+        if (pathname.includes('/blog')) {
+            if (bannerTextRef.current) {
+                let body = bannerTextRef.current.closest("body") // Closest can only traverse in one direction to the root
+                let section = body?.querySelector("section")
+                let sidebar = section?.querySelector("aside")
 
-            if (sidebar) {
-                let state = sidebar.style.display;
-                if (state != "none") {
-                    sidebar.style.display = "none";
-                } else {
-                    sidebar.style.display = "flex";
+                if (sidebar) {
+                    let state = sidebar.style.display;
+                    if (state != "none") {
+                        sidebar.style.display = "none";
+                    } else {
+                        sidebar.style.display = "flex";
+                    }
                 }
             }
+        } else {
+            // TODO: Add a fun easter egg
         }
     });
 

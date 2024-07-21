@@ -21,7 +21,7 @@ const RouterButton: React.FC<RouterButtonProps> = ({ className, href, reload, ..
     const router = useRouter();
     const pathname = usePathname();
 
-    const handleClick = (event: React.MouseEvent<HTMLButtonElement> | React.KeyboardEvent<HTMLButtonElement>) => {
+    const handleClick = async (event: React.MouseEvent<HTMLButtonElement> | React.KeyboardEvent<HTMLButtonElement>) => {
         event.preventDefault();
 
         if (process.env.NODE_ENV === 'development') {
@@ -29,9 +29,8 @@ const RouterButton: React.FC<RouterButtonProps> = ({ className, href, reload, ..
         };
 
         if (reload) {
-            router.push(href);
-            setTimeout(() => { window.location.reload();}, 10);
-
+            await router.push(href)
+            setTimeout(() => { window.location.reload();}, 50);
         } else {
             router.push(href);
         };

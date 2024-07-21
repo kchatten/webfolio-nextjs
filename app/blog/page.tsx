@@ -33,7 +33,7 @@ export default function BlogLandingPage() {
           </p>
           <p>
             As mentioned on the homepage, I also am actively pursuing a career in IT so you will find many topics beyond programming. Currently I am building out the 
-            Networking section in addition to the Web Development section as having a good understanding of the infrastructure of the internet is in nmy opinion a key skill for a web developer.
+            Networking section in addition to the Web Development section as having a good understanding of the infrastructure of the internet is in my opinion a key skill for a web developer.
           </p>
         </span>
       </ContentBlock>
